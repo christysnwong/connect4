@@ -1,0 +1,119 @@
+/* game board table */
+
+#board td {
+  width: 60px;
+  height: 60px;
+  border: solid 1px rgba(255,255,255,0.1);
+  background-color: rgba(0,0,0,0.1);
+  position: relative;
+  padding: 0px;
+  border-radius: 4px;
+  
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  /* TODO: make into circles */
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  position: relative;
+
+
+  animation-name: bounce;
+  animation-duration: 1500ms;
+  animation-fill-mode: forwards;
+  /* animation-timing-function: ease; */
+}
+
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.p1 {
+  background-color: dodgerblue;
+}
+
+.p2 {
+  background-color: lightgreen;
+}
+
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px gray;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.1);;
+  
+ }
+
+#column-top td:hover {
+  background-color: rgba(255,255,255,0.7);
+
+}
+
+
+.pieceholder {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 1px;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  text-shadow: 2px 2px 2px blue;
+
+}
+
+#msg {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#board {
+  margin: auto;
+  background-color: rgba(255,255,255,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.3);
+  border-radius: 4px;
+  padding: 20px;
+
+}
+
+div {
+  margin: auto;
+  text-align: center;
+}
+
+html {
+  height: 100%;
+  background: linear-gradient(35deg, #CCFFFF, #FFCCCC);;
+}
+
+
+@keyframes bounce {
+  0% {
+    bottom: 1000%;
+  }
+  30% {
+    bottom: 100%;
+  }
+  60% {
+    bottom: 30%;
+  }
+  80% {
+    bottom: 15%;
+  }
+  95% {
+    bottom: 5%;
+  }
+  15%, 45%, 75%, 90%, 100% {
+    bottom: 0;
+  }
+}

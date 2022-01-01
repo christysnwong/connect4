@@ -201,11 +201,8 @@ class Player {
 
     if(this.isValidColor(color) !== true) {
 
-      document.getElementById("p1-color").value = "";
-      document.getElementById("p2-color").value = "";
-
       alert("Please type in a valid color.");
-      throw new Error("Invalid color!!")
+      throw new Error("Invalid color!!");
     }
 
     this.color = color;
@@ -230,8 +227,16 @@ let start = document.getElementById("start");
 start.addEventListener("click", startGame);
 
 function startGame() {
-  let p1 = new Player(document.getElementById('p1-color').value);
-  let p2 = new Player(document.getElementById('p2-color').value);
+  
+  const p1 = new Player(document.getElementById("p1-color").value);
+  const p2 = new Player(document.getElementById("p2-color").value);
+  
+  if(p1.color.toLowerCase() === p2.color.toLowerCase()) {
+    alert("The color for Player 1 and 2 can't be the same! Please type in another color.");
+    throw new Error("Colors can't be the same!");
+  }
+
+
   new Game(p1, p2);
 }
 
